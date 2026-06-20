@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import ContentPageLayout from "@/components/ContentPageLayout";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -93,6 +94,21 @@ export default function PartnershipPage() {
           >
             Partnership proposal
           </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Send a message</h2>
+        <p>
+          Tell us about your outlet, audience, or organization and what you have
+          in mind — we typically respond within 2 business days.
+        </p>
+        <div className="mt-6">
+          <ContactForm
+            subject="Player Nation - Partnership Inquiry"
+            heading="Partnership inquiry"
+            description="Include a brief description of your outlet, audience, or organization and what you're looking for."
+          />
         </div>
       </section>
 
