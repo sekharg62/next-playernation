@@ -7,7 +7,7 @@ export const SITE_URL =
 /** Cloudflare Turnstile — dev uses interactive test key (requires user action). */
 export const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
-  (process.env.NODE_ENV === "development" ? "3x00000000000000000000FF" : "");
+  (process.env.NODE_ENV === "development" ? "3x00000000000000000000FF" : "3x00000000000000000000FF");
 
 export const STORAGE_KEYS = {
     AUTH_TOKEN: "auth_token",

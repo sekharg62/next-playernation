@@ -184,7 +184,7 @@ export default function ContactForm({
             />
           ) : (
             <p className="text-sm text-red-400" role="alert">
-              Captcha is not configured. Set NEXT_PUBLIC_TURNSTILE_SITE_KEY.
+              Captcha is not configured.Set NEXT_PUBLIC_TURNSTILE_SITE_KEY.
             </p>
           )}
         </div>
