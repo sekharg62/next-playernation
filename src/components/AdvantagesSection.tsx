@@ -87,9 +87,9 @@ export default function AdvantagesSection() {
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
           {/* Copy */}
           <div className="text-center lg:text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+           {/*  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
               Advantages
-            </p>
+            </p> */}
             <h2
               id="advantages-heading"
               className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.6rem] lg:leading-tight"
@@ -169,12 +169,12 @@ export default function AdvantagesSection() {
                       className="h-8 w-8 sm:h-9 sm:w-9"
                     />
                   </div>
-                  <p className="mt-3 text-sm font-semibold tracking-wide text-foreground sm:text-base">
+                 {/*  <p className="mt-3 text-sm font-semibold tracking-wide text-foreground sm:text-base">
                     Player <span className="text-primary">Nation</span>
-                  </p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted">
+                  </p> */}
+                  {/* <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted">
                     The core
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
