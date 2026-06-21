@@ -7,13 +7,12 @@ const features = [
   {
     title: "See your game the way pros see theirs",
     description:
-      "Upload your game and we track every pass, shot, tackle and more across the full match. You get the pass maps, shot maps and 100+ stats that used to live only inside pro clubs — so you can finally see not just the score, but exactly how it happened.",
+      "Upload your game and get every action tracked automatically. Explore 100+ stats, pass maps and shot maps, so you can see not just the score, but exactly how it happened.",
     image: "/output-img.png",
   },
   {
-    title: "Your own highlight reel, every match.",
-    description:
-      "We scan the entire match and pull out your goals, assists and big moments, cutting each into a clean, share-ready clip. The stuff that used to mean an evening of rewinding, trimming and exporting is done automatically — so your highlights are ready to share with everyone.",
+    title: "Every big moment, ready to share",
+    description:"Every game updates your ratings and evolves your FIFA-style ratings card. Game by game, you'll build a living record of your performances, progress and milestones.",
       image: "/input-img.png",
   },
   {
@@ -25,13 +24,12 @@ const features = [
   {
     title: "Know exactly what to work on next",
     description:
-      "We turn every match into insights — what you did well, where you're losing ground, and the specific things to improve. Track it match after match and watch your progress add up over the season.",
-    image: "/output-img.png",
+   "Know what's working, what isn't and what to improve next. Then track your progress game after game.",
+      image: "/output-img.png",
   },
   {
     title: "The locker room never closes",
-    description:
-      'Build a profile that tracks every game you\'ve ever played, climb the leaderboards, and start a group for your squad, your club or your mates. Every match ranks you against the people you actually play with — so the banter, the bragging rights and the "did you see my rating?" never stop.',
+    description:"Build your profile and create groups for your club, academy, team or squad. Every game becomes part of a shared story that lives on long after the final whistle.",
     image: "/input-img.png",
   },
 ];
@@ -46,11 +44,12 @@ export default function FeaturesSection() {
       <div className="mx-auto max-w-7.5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Features
+          Your sports journey, all in one place
+
           </h2>
-          <p className="mt-4 text-muted">
+        {/*   <p className="mt-4 text-muted">
             Everything you need to understand your game and share your story.
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">

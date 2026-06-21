@@ -8,7 +8,6 @@ const footerLinks = {
   company: [
     { href: "/", label: "Home" },
     { href: "/#features", label: "Features", sectionId: "features" },
-    { href: "/blog", label: "Blog" },
     { href: "/jobs", label: "Jobs" },
     { href: "/partnership", label: "Partnership" },
   ],
@@ -68,8 +67,7 @@ export default function Footer() {
           <div className="flex flex-col items-start sm:col-span-2 lg:col-span-1">
             <BrandIcon />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              Your ultimate destination for player stats, insights, and the
-              latest in sports gaming.
+            Enabling pro-level sports experiences for every player.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <AppStoreBadge className="h-10" />

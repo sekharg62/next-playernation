@@ -28,19 +28,19 @@ body {
 }
 
 .advantages-orbit-stage {
-  --orbit-radius: 6.5rem;
-  --orbit-duration: 44s;
+  --orbit-radius: 7.25rem;
+  --orbit-duration: 48s;
 }
 
 @media (min-width: 640px) {
   .advantages-orbit-stage {
-    --orbit-radius: 8.25rem;
+    --orbit-radius: 9rem;
   }
 }
 
 @media (min-width: 1024px) {
   .advantages-orbit-stage {
-    --orbit-radius: 9.5rem;
+    --orbit-radius: 10.75rem;
   }
 }
 

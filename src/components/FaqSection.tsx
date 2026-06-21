@@ -44,7 +44,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="scroll-mt-20 border-t border-border" aria-labelledby="faq-heading">
+    <section id="faq" className="scroll-mt-20" aria-labelledby="faq-heading">
       <div className="mx-auto max-w-7.5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2

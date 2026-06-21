@@ -240,11 +240,11 @@ export default function GalleryReviewSection() {
       <div className="mx-auto max-w-7.5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Loved by players, coaches &amp; parents
+            Loved by players, coaches &amp; parents around the world
           </h2>
-          <p className="mt-4 text-muted">
+          {/* <p className="mt-4 text-muted">
             Real stories from the Player Nation community around the world.
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-12 grid justify-items-center gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-5 lg:pt-4">

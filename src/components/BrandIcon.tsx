@@ -3,9 +3,15 @@ import Link from "next/link";
 
 export default function BrandIcon() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 shrink-0">
-      <Image src="/BrandLogo.svg" alt="Player Nation" width={100} height={100} />
-      
+    <Link href="/" className="flex shrink-0 items-center gap-2.5">
+      <Image
+        src="/BrandLogo.svg"
+        alt="Player Nation"
+        width={120}
+        height={120}
+        className="h-11 w-auto sm:h-12"
+        priority
+      />
     </Link>
   );
 }

@@ -1,33 +1,16 @@
-"use client";
 import Image from "next/image";
 import AppStoreBadge from "./AppStoreBadge";
 import GooglePlayBadge from "./GooglePlayBadge";
-import { useEffect, useState } from "react";
-import { getTotalUserCount } from "@/services/authApiServices";
 import { formatCompactNumber } from "@/utils/formatCompactNumber";
 
 // Add more avatars here (must exist in /public)
-const avatarImages = ["/sid.png", "/sajal.png","/lakhani.jpg","/sajal.png",];
+const avatarImages = ["/sid.png", "/sajal.jpg", "/lakhani.jpg", "/ritwik.jpg"];
 
-export default function HeroSection() {
+type HeroSectionProps = {
+  totalUserCount: number;
+};
 
-  const [totalUserCount, setTotalUserCount] = useState<number>(0);
-
-  useEffect(() => {
-    fetchTotalUserCount();
-  }, []);
-
-  const fetchTotalUserCount = async () => {
-    try {
-      const response = await getTotalUserCount();
-
-      if (response.success && response.data) {
-        setTotalUserCount(response.data.totalCount || 0);
-      }
-    } catch {
-      // Handle error silently
-    }
-  };
+export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (
     <section>
       <div className="mx-auto max-w-7.5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-16">
@@ -54,21 +37,20 @@ export default function HeroSection() {
                 ))}
               </div>
               <span className="text-sm text-muted">
-                Loved by <span className="text-primary">{formatCompactNumber(totalUserCount)}</span> players
+                 <span className="text-primary">{formatCompactNumber(totalUserCount)}</span> player performances analyzed
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="mt-8 text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Turn your match video into
-              <br />
-              pro stats and highlights
+            Turn your game videos into stats,
+              
+              highlights and memories.
             </h1>
 
             {/* Description */}
             <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-              Get stats, ratings, highlights and insights — built for every
-              player, coach and parent, not just the pros.
+            Upload your game footage and get pro-level stats, ratings, insights and highlights. Built for every player, coach and parent, not just for the pros.
             </p>
 
             {/* Store badges */}

@@ -28,19 +28,19 @@ export default function Navbar() {
         mobileOpen ? "max-lg:border-b-0" : "border-b border-border/40"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7.5xl items-center justify-between px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-8">
+      <nav className="mx-auto flex h-[4.25rem] max-w-7.5xl items-center justify-between px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-8">
         {/* Left — Brand (always visible) */}
         <div className="flex items-center">
           <BrandIcon />
         </div>
 
         {/* Center — Nav links (desktop / laptop only) */}
-        <ul className="hidden items-center justify-center gap-1 lg:flex">
+        <ul className="hidden items-center justify-center gap-1.5 lg:flex">
           {navLinks.map((link) => {
             const { href, label } = link;
             const sectionId = "sectionId" in link ? link.sectionId : undefined;
             const isActive = pathname === href;
-            const className = `rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+            const className = `rounded-md px-3.5 py-2.5 text-[0.9375rem] font-medium transition-colors sm:text-base ${
               isActive ? "text-primary" : "text-muted hover:text-foreground"
             }`;
 
@@ -62,9 +62,9 @@ export default function Navbar() {
 
         {/* Right — Store badges (desktop) + hamburger (mobile / tablet) */}
         <div className="flex items-center justify-end gap-2">
-          <div className="hidden items-center gap-2 lg:flex">
-            <AppStoreBadge className="h-8" />
-            <GooglePlayBadge className="h-8" />
+          <div className="hidden items-center gap-2.5 lg:flex">
+            <AppStoreBadge className="h-10" />
+            <GooglePlayBadge className="h-10" />
           </div>
 
           <button
@@ -107,7 +107,7 @@ export default function Navbar() {
               const { href, label } = link;
               const sectionId = "sectionId" in link ? link.sectionId : undefined;
               const isActive = pathname === href;
-              const className = `block rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+              const className = `block rounded-md px-3.5 py-3 text-[0.9375rem] font-medium transition-colors sm:text-base ${
                 isActive ? "text-primary" : "text-muted hover:text-foreground"
               }`;
               const closeMenu = () => setMobileOpen(false);
@@ -132,9 +132,9 @@ export default function Navbar() {
               );
             })}
           </ul>
-          <div className="mt-4 flex items-center gap-2 pt-4">
-            <AppStoreBadge className="h-8" />
-            <GooglePlayBadge className="h-8" />
+          <div className="mt-4 flex items-center gap-2.5 pt-4">
+            <AppStoreBadge className="h-9" />
+            <GooglePlayBadge className="h-9" />
           </div>
         </div>
       )}
