@@ -7,7 +7,7 @@ import { getTotalUserCount } from "@/services/authApiServices";
 import { formatCompactNumber } from "@/utils/formatCompactNumber";
 
 // Add more avatars here (must exist in /public)
-const avatarImages = ["/sid.png", "/sajal.png","/sid.png","/sajal.png",];
+const avatarImages = ["/sid.png", "/sajal.png","/lakhani.jpg","/sajal.png",];
 
 export default function HeroSection() {
 
@@ -40,7 +40,7 @@ export default function HeroSection() {
                 {avatarImages.map((src, i) => (
                   <div
                     key={`${src}-${i}`}
-                    className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-background"
+                    className="relative h-8 w-8 blur-[1px] overflow-hidden rounded-full border-2 border-background"
                   >
                     <Image
                       src={src}
