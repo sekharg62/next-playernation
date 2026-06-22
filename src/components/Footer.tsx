@@ -4,23 +4,36 @@ import AppStoreBadge from "./AppStoreBadge";
 import GooglePlayBadge from "./GooglePlayBadge";
 import SectionLink from "./SectionLink";
 
-const footerLinks = {
-  company: [
-    { href: "/", label: "Home" },
-    { href: "/#features", label: "Features", sectionId: "features" },
-    { href: "/jobs", label: "Jobs" },
-    { href: "/partnership", label: "Partnership" },
-  ],
-  legal: [
-    { href: "/privacy", label: "Privacy Policy" },
-    { href: "/terms", label: "Terms of Service" },
-    {
-      href: "/contact",
-      label: "Contact",
-    },
-  ],
-};
+const footerLinkSections = [
+  {
+    title: "Company",
+    links: [
+      { href: "/", label: "Home" },
+      { href: "/#features", label: "Features", sectionId: "features" },
+      { href: "/jobs", label: "Jobs" },
+      { href: "/partnership", label: "Partnership" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "/privacypolicy", label: "Privacy Policy" },
+      { href: "/termsandconditions", label: "Terms and Conditions" },
+      { href: "/dataprocessingagreement", label: "Data Processing Agreement" },
+      { href: "/scc", label: "Standard Contractual Clauses" },
+      { href: "/sub-processors", label: "Subprocessors" },
+    
 
+    ],
+  },
+  {
+    title: "Privacy",
+    links: [
+      { href: "/contact", label: "Contact" },
+      { href: "/manage-cookies", label: "Manage Cookies" },
+    ],
+  },
+] as const;
 function FooterLink({
   href,
   label,
@@ -62,12 +75,12 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7.5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,2fr)] lg:items-start lg:gap-12">
           {/* Brand */}
-          <div className="flex flex-col items-start sm:col-span-2 lg:col-span-1">
+          <div className="flex flex-col items-start">
             <BrandIcon />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-            Enabling pro-level sports experiences for every player.
+              Enabling pro-level sports experiences for every player.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <AppStoreBadge className="h-10" />
@@ -75,36 +88,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company */}
-          <div className="flex flex-col items-start">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Company
-            </h3>
-            <ul className="mt-4 flex w-full flex-col gap-2.5">
-              {footerLinks.company.map(({ href, label, ...link }) => (
-                <li key={label}>
-                  <FooterLink
-                    href={href}
-                    label={label}
-                    sectionId={"sectionId" in link ? link.sectionId : undefined}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div className="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Legal
-            </h3>
-            <ul className="mt-4 flex w-full flex-col gap-2.5">
-              {footerLinks.legal.map(({ href, label }) => (
-                <li key={label}>
-                  <FooterLink href={href} label={label} />
-                </li>
-              ))}
-            </ul>
+          {/* Company, Legal, Privacy */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10">
+            {footerLinkSections.map(({ title, links }) => (
+              <div key={title} className="flex min-w-0 flex-col items-start">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+                  {title}
+                </h3>
+                <ul className="mt-4 flex w-full flex-col gap-2.5">
+                  {links.map((link) => (
+                    <li key={link.label}>
+                      <FooterLink
+                        href={link.href}
+                        label={link.label}
+                        sectionId={"sectionId" in link ? link.sectionId : undefined}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 

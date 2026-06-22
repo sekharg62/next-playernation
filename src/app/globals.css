@@ -21,6 +21,12 @@
   --max-width-7\.5xl: 84rem;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -28,7 +34,7 @@ body {
 }
 
 .advantages-orbit-stage {
-  --orbit-radius: 7.25rem;
+  --orbit-radius: 5.75rem;
   --orbit-duration: 48s;
 }
 

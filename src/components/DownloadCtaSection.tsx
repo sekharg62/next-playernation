@@ -35,14 +35,14 @@ export default function DownloadCtaSection({
 
       <div className="relative mx-auto max-w-7.5xl px-4 sm:px-6 lg:px-8">
         <div className="relative mx-auto flex max-w-5xl items-center justify-center gap-3 sm:gap-5 lg:gap-8">
-          <Image
+         {/*  <Image
             src="/football.png"
             alt=""
             width={100}
             height={120}
             className="pointer-events-none hidden h-16 w-auto shrink-0 sm:block md:h-20 lg:h-24"
             aria-hidden
-          />
+          /> */}
 
           <div className="relative min-w-0 flex-1 max-w-3xl">
             <div
@@ -98,14 +98,14 @@ export default function DownloadCtaSection({
             </div>
           </div>
 
-          <Image
+        {/*   <Image
             src="/football.png"
             alt=""
             width={100}
             height={120}
             className="pointer-events-none hidden h-16 w-auto shrink-0 scale-x-[-1] sm:block md:h-20 lg:h-24"
             aria-hidden
-          />
+          /> */}
         </div>
       </div>
     </section>

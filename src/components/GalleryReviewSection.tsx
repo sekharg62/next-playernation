@@ -57,12 +57,12 @@ understanding of the game.`,
     role: "Coach & Parent",
   },
   {
-    image: "https://www.calai.app/humans/jeremiah.jpg",
-    countryFlag: "https://flagcdn.com/w40/au.png",
-    name: "Ethan Brooks",
+    image: "/aleksi.jpeg",
+    countryFlag: "https://flagcdn.com/w40/fi.png",
+    name: "Aleksi",
     review:
-      "The ratings and insights help me focus on what actually improves my game each week.",
-    role: "Player",
+      "Playernation helped our team a lot during a challenging period. We started using the analysis during the first half of the spring season, and when we faced the same opponents in the second half, our results were noticeably better. I’m sure that Playernation’s analysis played an important role in helping us achieve those improved results", 
+       role: "Coach",
   },
   {
     image: "https://www.calai.app/humans/jeremiah.jpg",

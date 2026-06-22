@@ -39,10 +39,7 @@ export default function WhyChooseUsSection() {
           >
             Why PlayerNation?
           </h2>
-          <p className="mt-4 text-muted">
-            PlayerNation gives you pro tools, zero complexity — so you can focus
-            on playing, improving and sharing your game.
-          </p>
+         
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

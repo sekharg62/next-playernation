@@ -3,18 +3,103 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
+  acceptAllCookies,
+  COOKIE_CONSENT_OPEN_EVENT,
   getCookieConsent,
-  setCookieConsent,
-  type CookieConsentStatus,
+  getLastCookieConsent,
+  rejectOptionalCookies,
+  saveCookieConsent,
+  shouldShowCookieBanner,
+  type CookiePreferences,
 } from "@/utils/cookieConsent";
+
+const COOKIE_CATEGORIES = [
+  {
+    id: "necessary" as const,
+    title: "Strictly necessary",
+    description:
+      "Login, security, and core platform functions. Cannot be disabled.",
+    alwaysOn: true,
+  },
+  {
+    id: "analytics" as const,
+    title: "Analytics & performance",
+    description:
+      "Helps us understand how the platform is used so we can improve it.",
+    alwaysOn: false,
+  },
+  {
+    id: "functional" as const,
+    title: "Functional",
+    description:
+      "Remembers your preferences, language, and settings across sessions.",
+    alwaysOn: false,
+  },
+  {
+    id: "marketing" as const,
+    title: "Marketing & advertising",
+    description:
+      "Used to show relevant ads and measure their effectiveness, including via third-party networks.",
+    alwaysOn: false,
+  },
+];
+
+function ToggleSwitch({
+  checked,
+  disabled,
+  onChange,
+  label,
+}: {
+  checked: boolean;
+  disabled?: boolean;
+  onChange: (checked: boolean) => void;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      disabled={disabled}
+      onClick={() => onChange(!checked)}
+      className={`relative h-7 w-12 shrink-0 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:cursor-not-allowed ${
+        checked ? "bg-primary/80" : "bg-white/15"
+      }`}
+    >
+      <span
+        className={`absolute top-1 left-1 h-5 w-5 rounded-full bg-white shadow transition-transform ${
+          checked ? "translate-x-5" : "translate-x-0"
+        }`}
+      />
+    </button>
+  );
+}
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const [preferences, setPreferences] = useState<CookiePreferences>({
+    analytics: false,
+    functional: false,
+    marketing: false,
+  });
+
+  const openBanner = () => {
+    const stored = getLastCookieConsent();
+    if (stored) {
+      setPreferences(stored.preferences);
+    }
+    setVisible(true);
+  };
 
   useEffect(() => {
-    if (!getCookieConsent()) {
+    if (shouldShowCookieBanner()) {
       setVisible(true);
     }
+
+    const handleOpen = () => openBanner();
+    window.addEventListener(COOKIE_CONSENT_OPEN_EVENT, handleOpen);
+    return () => window.removeEventListener(COOKIE_CONSENT_OPEN_EVENT, handleOpen);
   }, []);
 
   useEffect(() => {
@@ -28,8 +113,18 @@ export default function CookieConsent() {
     };
   }, [visible]);
 
-  const handleChoice = (status: CookieConsentStatus) => {
-    setCookieConsent(status);
+  const handleSave = () => {
+    saveCookieConsent(preferences);
+    setVisible(false);
+  };
+
+  const handleAcceptAll = () => {
+    acceptAllCookies();
+    setVisible(false);
+  };
+
+  const handleRejectOptional = () => {
+    rejectOptionalCookies();
     setVisible(false);
   };
 
@@ -38,56 +133,121 @@ export default function CookieConsent() {
   return (
     <>
       <div
-        className="fixed inset-0 z-[55] bg-black/60 backdrop-blur-[2px]"
+        className="fixed inset-0 z-[55] bg-black/70 backdrop-blur-[2px]"
         aria-hidden
       />
 
-      <div className="fixed inset-x-0 bottom-0 z-[60] sm:px-4 sm:pb-4">
+      <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6">
         <div
-          className="rounded-t-2xl border border-b-0 border-primary bg-[#0a0c10] px-4 py-5 shadow-[0_-12px_40px_rgba(0,0,0,0.45)] sm:rounded-2xl sm:border-b sm:px-6 sm:py-6"
+          className="max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-[#1b1f27] shadow-[0_24px_80px_rgba(0,0,0,0.55)] md:max-h-none md:overflow-visible"
           role="dialog"
           aria-labelledby="cookie-consent-title"
           aria-describedby="cookie-consent-description"
           aria-modal="true"
         >
-          <div className="mx-auto flex max-w-7.5xl flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+          <div className="border-b border-white/8 px-6 py-5 sm:px-8 lg:py-4">
+            <h2
+              id="cookie-consent-title"
+              className="text-xl font-bold tracking-tight text-foreground lg:text-[1.375rem]"
+            >
+              We use cookies on PlayerNation
+            </h2>
             <p
               id="cookie-consent-description"
-              className="text-sm leading-relaxed text-foreground sm:text-[0.9375rem]"
+              className="mt-2.5 text-sm leading-relaxed text-muted lg:mt-2 lg:text-[0.875rem] lg:leading-snug"
             >
-              <span id="cookie-consent-title" className="sr-only">
-                Cookie consent
-              </span>
-              By clicking{" "}
-              <span className="font-semibold text-foreground">Accept</span>, you
-              agree to the storing of cookies on your device to enhance site
-              navigation, analyze site usage, and assist in our marketing
-              efforts. For more details, please refer to our{" "}
+              We use cookies and similar technologies to keep PlayerNation working,
+              remember your preferences, and understand how the platform is used.
+              Strictly necessary cookies are always on. You can choose whether to
+              allow optional cookies below. See our{" "}
               <Link
                 href="/privacy"
-                className="font-medium text-primary underline underline-offset-2 transition-colors hover:text-primary/80"
+                className="font-medium text-foreground underline underline-offset-2 transition-colors hover:text-primary"
               >
                 Privacy Policy
-              </Link>
-              .
+              </Link>{" "}
+              for more details.
             </p>
+          </div>
 
-            <div className="flex shrink-0 items-center gap-3 sm:gap-4">
+          <div className="divide-y divide-white/8 px-6 sm:px-8">
+            {COOKIE_CATEGORIES.map((category) => {
+              const preferenceKey = category.id as keyof CookiePreferences;
+              const checked = category.alwaysOn
+                ? true
+                : preferences[preferenceKey];
+
+              return (
+                <div
+                  key={category.id}
+                  className="flex items-start justify-between gap-4 py-4 lg:py-3"
+                >
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-foreground">
+                      {category.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted lg:mt-0.5 lg:text-[0.8125rem] lg:leading-snug">
+                      {category.description}
+                    </p>
+                  </div>
+
+                  {category.alwaysOn ? (
+                    <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-muted">
+                      Always on
+                    </span>
+                  ) : (
+                    <ToggleSwitch
+                      checked={checked}
+                      onChange={(value) =>
+                        setPreferences((current) => ({
+                          ...current,
+                          [preferenceKey]: value,
+                        }))
+                      }
+                      label={`${category.title} cookies`}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="border-t border-white/8 px-6 py-5 sm:px-8 lg:py-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-nowrap">
               <button
                 type="button"
-                onClick={() => handleChoice("rejected")}
-                className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+                onClick={handleAcceptAll}
+                className="rounded-lg border border-white/15 px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
               >
-                Reject
+                Accept all
               </button>
               <button
                 type="button"
-                onClick={() => handleChoice("accepted")}
-                className="rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-black transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0c10]"
+                onClick={handleSave}
+                className="rounded-lg border border-white/15 px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
               >
-                Accept
+                Save my preferences
+              </button>
+              <button
+                type="button"
+                onClick={handleRejectOptional}
+                className="rounded-lg border border-white/15 px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              >
+                Reject all optional
               </button>
             </div>
+
+            <p className="mt-4 text-sm text-muted lg:mt-3 lg:text-[0.8125rem]">
+              You can update your cookie preferences at any time in{" "}
+              <button
+                type="button"
+                onClick={openBanner}
+                className="font-medium text-foreground underline underline-offset-2 transition-colors hover:text-primary"
+              >
+                Settings
+              </button>
+              .
+            </p>
           </div>
         </div>
       </div>
