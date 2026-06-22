@@ -10,6 +10,9 @@ type HeroSectionProps = {
   totalUserCount: number;
 };
 
+const videoUrl =
+  "https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/720e3708-5d57-4b24-b118-8130965706df/match_highlights_1772524927755_with_music.mp4";
+
 export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (
     <section>
@@ -69,38 +72,39 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
               <div className="h-full max-h-[min(72vh,700px)] w-full max-w-md rounded-full bg-primary/10 blur-3xl" />
             </div>
 
-            <div className="relative z-10 w-fit -mr-2 -rotate-6 sm:-mr-4 lg:-mr-5 lg:-rotate-10">
-              <Image
-                src="/input-img.png"
-                alt="Submit your game"
-                width={520}
-                height={1040}
-                className="h-[min(52vh,480px)] w-auto object-contain sm:h-[min(58vh,540px)] lg:h-[min(68vh,640px)] xl:h-[min(72vh,700px)]"
-                priority
-              />
-               <div className="absolute top-[17%] left-1/2 z-10 w-[62%] -translate-x-1/2 overflow-hidden aspect-video ">
+            <div className="relative z-10 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8">
+              <div className="relative w-fit -rotate-6 lg:-rotate-8">
                 <Image
-                  src="/hero-vdo.gif"
-                  alt="Match footage preview"
-                  fill
-                  unoptimized
-                  sizes="(max-width: 1024px) 30vw, 200px"
-                  className="object-cover"
+                  src="/final-input.png"
+                  alt="Submit your game"
+                  width={520}
+                  height={1040}
+                  className="h-[min(44vh,380px)] w-auto object-contain sm:h-[min(50vh,440px)] lg:h-[min(62vh,580px)] xl:h-[min(68vh,640px)]"
+                  priority
                 />
-              </div> 
-            </div>
-{/* 
-            <HeroLoopyArrow className="relative z-20 -mx-3 h-[min(10vh,5rem)] w-auto shrink-0 sm:-mx-5 lg:-mx-7 lg:h-24 lg:w-32" />
- */}
-            <div className="relative z-10 -ml-2 sm:-ml-4 lg:-ml-5">
-              <Image
-                src="/output-img.png"
-                alt="Match analysis and stats"
-                width={540}
-                height={1080}
-                className="h-[min(54vh,500px)] w-auto rotate-6 object-contain  sm:h-[min(60vh,560px)] lg:h-[min(70vh,660px)] lg:rotate-10 xl:h-[min(74vh,720px)]"
-                priority
-              />
+                <div className="absolute top-[58%] left-1/2 z-10 aspect-video w-[78%] -translate-x-1/2 overflow-hidden rounded bg-black sm:rounded-lg">
+                  <video
+                    src={videoUrl}
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    aria-label="Match highlights preview"
+                  />
+                </div>
+              </div>
+              <div className="w-fit rotate-6 lg:rotate-8">
+                <Image
+                  src="/final-input.png"
+                  alt="Match analysis and stats"
+                  width={540}
+                  height={1080}
+                  className="h-[min(44vh,380px)] w-auto object-contain sm:h-[min(50vh,440px)] lg:h-[min(62vh,580px)] xl:h-[min(68vh,640px)]"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
