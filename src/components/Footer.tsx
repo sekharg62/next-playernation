@@ -22,8 +22,6 @@ const footerLinkSections = [
       { href: "/dataprocessingagreement", label: "Data Processing Agreement" },
       { href: "/scc", label: "Standard Contractual Clauses" },
       { href: "/sub-processors", label: "Subprocessors" },
-    
-
     ],
   },
   {
