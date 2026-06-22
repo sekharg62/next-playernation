@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AppStoreBadge from "./AppStoreBadge";
 import GooglePlayBadge from "./GooglePlayBadge";
+import HeroHighlightVideo from "./HeroHighlightVideo";
 import { formatCompactNumber } from "@/utils/formatCompactNumber";
 
 // Add more avatars here (must exist in /public)
@@ -73,29 +74,18 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
             </div>
 
             <div className="relative z-10 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8">
-              <div className="relative w-fit -rotate-6 lg:-rotate-8">
+              <div className="relative z-20 w-fit -rotate-6 lg:-rotate-8">
                 <Image
                   src="/final-input.png"
                   alt="Submit your game"
                   width={520}
                   height={1040}
-                  className="h-[min(44vh,380px)] w-auto object-contain sm:h-[min(50vh,440px)] lg:h-[min(62vh,580px)] xl:h-[min(68vh,640px)]"
+                  className="pointer-events-none h-[min(44vh,380px)] w-auto object-contain sm:h-[min(50vh,440px)] lg:h-[min(62vh,580px)] xl:h-[min(68vh,640px)]"
                   priority
                 />
-                <div className="absolute top-[58%] left-1/2 z-10 aspect-video w-[78%] -translate-x-1/2 overflow-hidden rounded bg-black sm:rounded-lg">
-                  <video
-                    src={videoUrl}
-                    className="h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    aria-label="Match highlights preview"
-                  />
-                </div>
+                <HeroHighlightVideo src={videoUrl} />
               </div>
-              <div className="w-fit rotate-6 lg:rotate-8">
+              <div className="pointer-events-none relative z-0 w-fit rotate-6 lg:rotate-8">
                 <Image
                   src="/final-input.png"
                   alt="Match analysis and stats"
