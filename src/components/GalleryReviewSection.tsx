@@ -243,7 +243,7 @@ export default function GalleryReviewSection() {
             Loved by players, coaches &amp; parents around the world
           </h2>
           {/* <p className="mt-4 text-muted">
-            Real stories from the Player Nation community around the world.
+            Real stories from the PlayerNation community around the world.
           </p> */}
         </div>
 

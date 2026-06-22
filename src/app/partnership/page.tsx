@@ -3,15 +3,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Partnership | Player Nation",
+  title: "Partnership | PlayerNation",
   description:
-    "Media inquiries, brand partnerships, and collaboration opportunities with Player Nation.",
+    "Media inquiries, brand partnerships, and collaboration opportunities with PlayerNation.",
 };
 
 export default function PartnershipPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <ContactSupport mailtoSubject="Player Nation - Partnership Inquiry" />
+      <ContactSupport mailtoSubject="PlayerNation - Partnership Inquiry" />
 
     {/*   <p className="text-center text-sm text-muted">
         Follow us on{" "}

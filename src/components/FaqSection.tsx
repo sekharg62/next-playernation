@@ -9,34 +9,38 @@ type FaqItem = {
 
 const faqs: FaqItem[] = [
   {
-    question: "What is Player Nation?",
+    question: "Which sports does PlayerNation support?",
     answer:
-      "Player Nation turns your match video into pro-level stats, ratings, and share-ready highlights. Upload footage from your phone and get insights built for players, coaches, and parents — not just elite clubs.",
+      "PlayerNation currently supports football (soccer), with more sports coming soon.",
   },
   {
-    question: "How do I upload a match?",
+    question: "What kind of videos can I upload?",
     answer:
-      "Download the app, record or import your match video, and upload it from your gallery. Our system processes the full game and delivers stats, ratings, and highlights when analysis is complete.",
+      "Upload footage from an AI camera, a phone camera or almost any other video source. If you can record it, we can analyze it.",
   },
   {
-    question: "How long does analysis take?",
+    question: "Do I need special cameras, wearables or GPS trackers?",
     answer:
-      "Most matches are processed within a few hours depending on video length and demand. You'll get a notification when your stats, rating, and highlights are ready to view and share.",
+      "No. PlayerNation works with the video you already have, with no expensive equipment, sensors or wearables required.",
   },
   {
-    question: "Who is Player Nation for?",
+    question: "How much does PlayerNation cost?",
     answer:
-      "Players tracking their development, parents following progress, coaches giving clearer feedback, and clubs or academies managing squads. Everyone in the football journey can use the same platform.",
+      "Your first game analysis is completely free. After that, pricing depends on the features and analysis you need.",
   },
   {
-    question: "Is Player Nation free?",
+    question: "Who is PlayerNation for?",
     answer:
-      "Player Nation offers free features to get started. Premium plans unlock deeper stats, unlimited uploads, and advanced tools. Check the app for current pricing in your region.",
+      "PlayerNation is built for players, parents, coaches, teams, clubs and academies. If you're part of an athlete's journey, PlayerNation is built for you.",
   },
   {
-    question: "Is my match footage private?",
+    question: "How long does game analysis take?",
+    answer: "Games are processed within 24 hours.",
+  },
+  {
+    question: "Who owns my videos and data?",
     answer:
-      "Your videos are used to generate your stats and highlights. You control what you share publicly. See our Privacy Policy for full details on how we store and protect your data.",
+      "You own your videos and data. We take privacy seriously, never sell your data to third parties and are fully GDPR compliant.",
   },
 ];
 
@@ -51,19 +55,9 @@ export default function FaqSection() {
             id="faq-heading"
             className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           >
-            Frequently asked questions
+            Got questions?
           </h2>
-          <p className="mt-4 text-muted">
-            Everything you need to know about Player Nation. Can&apos;t find an
-            answer?{" "}
-            <a
-              href="mailto:play@statmagic.xyz"
-              className="text-primary underline underline-offset-2 hover:text-primary/80"
-            >
-              Contact us
-            </a>
-            .
-          </p>
+          
         </div>
 
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-border rounded-2xl border border-border bg-card/30">

@@ -34,29 +34,23 @@ export default function DownloadCtaSection({
       />
 
       <div className="relative mx-auto max-w-7.5xl px-4 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-3xl">
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/6 blur-3xl"
-            aria-hidden
-          />
+        <div className="relative mx-auto flex max-w-5xl items-center justify-center gap-3 sm:gap-5 lg:gap-8">
           <Image
-            src="/Left-Leaf.svg"
+            src="/football.png"
             alt=""
-            width={42}
+            width={100}
             height={120}
-            className="pointer-events-none absolute -left-1 top-1/2 z-20 hidden h-24 w-auto -translate-y-1/2 sm:block md:-left-2 md:h-28 lg:-left-6 lg:h-30"
-            aria-hidden
-          />
-          <Image
-            src="/Left-Leaf.svg"
-            alt=""
-            width={42}
-            height={120}
-            className="pointer-events-none absolute -right-1 top-1/2 z-20 hidden h-24 w-auto -translate-y-1/2 scale-x-[-1] sm:block md:-right-2 md:h-28 lg:-right-6 lg:h-30"
+            className="pointer-events-none hidden h-16 w-auto shrink-0 sm:block md:h-20 lg:h-24"
             aria-hidden
           />
 
-          <div className="relative rounded-3xl bg-linear-to-br from-white/10 via-white/4 to-white/6 p-px shadow-[0_8px_32px_rgba(0,0,0,0.35),0_0_48px_rgba(192,254,0,0.04)]">
+          <div className="relative min-w-0 flex-1 max-w-3xl">
+            <div
+              className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/6 blur-3xl"
+              aria-hidden
+            />
+
+            <div className="relative rounded-3xl bg-linear-to-br from-white/10 via-white/4 to-white/6 p-px shadow-[0_8px_32px_rgba(0,0,0,0.35),0_0_48px_rgba(192,254,0,0.04)]">
             <div className="relative overflow-hidden rounded-[calc(1.5rem-1px)] border border-white/8 bg-black/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-125">
               <div
                 className="pointer-events-none absolute inset-0 bg-linear-to-br from-white/8 via-white/2 to-transparent"
@@ -83,7 +77,7 @@ export default function DownloadCtaSection({
                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
                   Ready to Join{" "}
                   <span className="bg-linear-to-r from-primary via-[#d8ff4d] to-primary bg-clip-text text-transparent">
-                    Player Nation?
+                    PlayerNation?
                   </span>
                 </h2>
 
@@ -101,7 +95,17 @@ export default function DownloadCtaSection({
                 </div>
               </div>
             </div>
+            </div>
           </div>
+
+          <Image
+            src="/football.png"
+            alt=""
+            width={100}
+            height={120}
+            className="pointer-events-none hidden h-16 w-auto shrink-0 scale-x-[-1] sm:block md:h-20 lg:h-24"
+            aria-hidden
+          />
         </div>
       </div>
     </section>

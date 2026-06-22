@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Pro clubs have used data for years. Here is how grassroots players can use pass maps, shot charts, and match ratings to train smarter.",
     description:
-      "Learn how grassroots football players can use match stats, pass maps, and player ratings from Player Nation to identify strengths, fix weaknesses, and improve faster every season.",
+      "Learn how grassroots football players can use match stats, pass maps, and player ratings from PlayerNation to identify strengths, fix weaknesses, and improve faster every season.",
     image:
       "https://images.unsplash.com/photo-1434648957308-5e6a859697e8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "Football player match statistics dashboard on a phone",
@@ -34,7 +34,7 @@ export const blogPosts: BlogPost[] = [
       "Pass maps are especially useful for midfielders and defenders. If most of your completed passes travel sideways, you may be playing too safe. If your map clusters in one zone, opponents can predict your movement and close you down earlier.",
       "For attackers, shot maps reveal more than goals. Are you shooting from high-value areas? Are you taking too many low-probability efforts? A striker who converts one of five chances may still be doing the right thing if the chances were quality.",
       "The biggest advantage is consistency. One match is a snapshot. Ten matches become a trend. Track your ratings and key stats across a season and you will spot patterns no single highlight reel can show — late-game fatigue, stronger performances on one flank, or improved pressing after training changes.",
-      "Player Nation was built for exactly this workflow: upload your match, get pro-style reports, and turn every game into feedback you can use next week. Data does not replace instinct or coaching, but it gives every player the same objective starting point pros have used for years.",
+      "PlayerNation was built for exactly this workflow: upload your match, get pro-style reports, and turn every game into feedback you can use next week. Data does not replace instinct or coaching, but it gives every player the same objective starting point pros have used for years.",
     ],
   },
   {
@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Pass maps look simple, but they expose habits, risk levels, and where you really influence the pitch.",
     description:
-      "Understand what football pass maps show about positioning, decision-making, and risk — and how Player Nation helps grassroots players read their own game like a pro analyst.",
+      "Understand what football pass maps show about positioning, decision-making, and risk — and how PlayerNation helps grassroots players read their own game like a pro analyst.",
     image:
       "https://images.unsplash.com/photo-1570498839593-e565b39455fc?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "Football pass map visualization on a mobile app screen",
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
       "Defenders can use pass maps to check build-up patterns. Are you comfortable playing through pressure, or do you default to long clearances under stress? Neither is always wrong, but the map shows which habit you rely on when the game speeds up.",
       "Wide players should look at width. If your passes rarely reach the touchline or cut inside early every time, your team loses spacing. Midfielders should look at connections: are you linking with both the back line and the forwards, or operating in an isolated pocket?",
       "The best part of reviewing a pass map after each match is comparison. Over a month, you can see whether a tactical tweak worked, whether fitness is affecting late-game distribution, and whether you are growing into a more influential role.",
-      "With Player Nation, pass maps are generated automatically from uploaded matches — no manual tagging, no spreadsheet work. That means more time reviewing decisions and less time preparing data.",
+      "With PlayerNation, pass maps are generated automatically from uploaded matches — no manual tagging, no spreadsheet work. That means more time reviewing decisions and less time preparing data.",
     ],
   },
   {
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Highlights are not just for social media. Used well, they help young players learn faster and communicate progress with coaches and parents.",
     description:
-      "Discover why automated highlight reels matter for youth football development, recruiting conversations, and building confidence in young players using Player Nation.",
+      "Discover why automated highlight reels matter for youth football development, recruiting conversations, and building confidence in young players using PlayerNation.",
     image:
       "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Youth football player watching match highlights on a phone",
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
       "For development, the goal is not only to celebrate good plays. Young players should watch near-misses too: the shot saved, the through ball intercepted, the tackle that started a counter. Those clips support better conversations with coaches about decision-making under pressure.",
       "Parents benefit as well. Match stats can feel abstract until you see the moments behind the numbers. A highlight reel paired with a player report gives families a fuller picture of progress — not just whether their child scored, but how they contributed across the game.",
       "Used consistently across a season, highlights and ratings together build confidence and accountability. Players see growth. Coaches save time. Families stay engaged.",
-      "Player Nation combines automated highlights with detailed match reports so every game leaves players with both the clips they want to share and the insights they need to improve.",
+      "PlayerNation combines automated highlights with detailed match reports so every game leaves players with both the clips they want to share and the insights they need to improve.",
     ],
   },
 ];

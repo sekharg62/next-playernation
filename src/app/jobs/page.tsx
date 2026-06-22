@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Jobs | Player Nation",
-  description: "Join the Player Nation team and help build the future of grassroots football analytics.",
+  title: "Jobs | PlayerNation",
+  description: "Join the PlayerNation team and help build the future of grassroots football analytics.",
 };
 
 export default function JobsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <ContactSupport mailtoSubject="Player Nation - Job Application" />
+      <ContactSupport mailtoSubject="PlayerNation - Job Application" />
 
       {/* <p className="text-center text-sm text-muted">
         Learn more about us on the{" "}

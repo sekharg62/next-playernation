@@ -5,7 +5,7 @@ type ContactSupportProps = {
 };
 
 export default function ContactSupport({
-  mailtoSubject = "Player Nation - Support",
+  mailtoSubject = "PlayerNation - Support",
 }: ContactSupportProps) {
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(mailtoSubject)}`;
 

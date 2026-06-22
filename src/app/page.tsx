@@ -17,8 +17,9 @@ export default async function Home() {
       <FeaturesSection />
       <WhyChooseUsSection />
       <AdvantagesSection />
-      <DownloadCtaSection totalUserCount={totalUserCount} />
       <FaqSection />
+      <DownloadCtaSection totalUserCount={totalUserCount} />
+      
     </>
   );
 }

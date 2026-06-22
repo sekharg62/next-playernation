@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Article Not Found | Player Nation",
+      title: "Article Not Found | PlayerNation",
     };
   }
 
@@ -39,7 +39,7 @@ export async function generateMetadata({
   const imageUrl = getBlogImageUrl(post.image);
 
   return {
-    title: `${post.title} | Player Nation Blog`,
+    title: `${post.title} | PlayerNation Blog`,
     description: post.description,
     alternates: {
       canonical: url,
@@ -86,12 +86,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     dateModified: post.updatedAt,
     author: {
       "@type": "Organization",
-      name: "Player Nation",
+      name: "PlayerNation",
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
-      name: "Player Nation",
+        name: "PlayerNation",
       url: SITE_URL,
     },
     mainEntityOfPage: {
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <section>
           <h2>Keep improving every match</h2>
           <p>
-            Upload your next game to Player Nation for pro-style stats, automated
+            Upload your next game to PlayerNation for pro-style stats, automated
             highlights, and player ratings that help you train with purpose.
           </p>
         </section>

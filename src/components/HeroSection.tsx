@@ -11,9 +11,7 @@ type HeroSectionProps = {
   totalUserCount: number;
 };
 
-const videoUrl =
-  "https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/66cd8f97-f978-4d3b-ad97-ba2ff728e7b4/2f0d338d-42c3-4754-8793-c73f3c70e974/top_moments_1_1782031540740_with_music.mp4";
-
+const videoUrl ="https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/eee9f2ca-442e-4534-a3f0-88f6a139a1fd/match_highlights_1781787497019_with_music.mp4";
 export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (
     <section>
@@ -85,6 +83,16 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                 />
                 <HeroHighlightVideo src={videoUrl} />
               </div>
+
+              <Image
+                src="/Arrow.svg"
+                alt=""
+                aria-hidden
+                width={100}
+                height={100}
+                className="pointer-events-none absolute top-[28%] left-1/2 z-30 h-14 w-14 -translate-x-1/2 -translate-y-1/2 sm:h-16 sm:w-16 lg:top-[26%] lg:h-[4.5rem] lg:w-[4.5rem]"
+              />
+
               <div className="pointer-events-none relative z-0 w-fit rotate-6 lg:rotate-8">
                 <Image
                   src="/final-input.png"

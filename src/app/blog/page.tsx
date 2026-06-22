@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog | Player Nation",
+  title: "Blog | PlayerNation",
   description:
     "Football analytics tips, player development guides, and match insights for grassroots players, coaches, and parents.",
   alternates: {
     canonical: `${SITE_URL}/blog`,
   },
   openGraph: {
-    title: "Blog | Player Nation",
+    title: "Blog | PlayerNation",
     description:
       "Football analytics tips, player development guides, and match insights for grassroots players, coaches, and parents.",
     url: `${SITE_URL}/blog`,
@@ -24,7 +24,7 @@ export default function BlogPage() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Player Nation Blog",
+    name: "PlayerNation Blog",
     description:
       "Football analytics tips, player development guides, and match insights.",
     url: `${SITE_URL}/blog`,
@@ -57,7 +57,7 @@ export default function BlogPage() {
 
           <header className="mx-auto mt-8 max-w-2xl text-center">
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Player Nation Blog
+              PlayerNation Blog
             </h1>
             <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
               Guides on match stats, highlight reels, and player development for

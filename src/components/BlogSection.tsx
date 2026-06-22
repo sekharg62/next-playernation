@@ -9,9 +9,9 @@ export default function BlogSection() {
   const blogListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Player Nation Blog",
+    name: "PlayerNation Blog",
     description:
-      "Football analytics, player development, and match insights from Player Nation.",
+      "Football analytics, player development, and match insights from PlayerNation.",
     itemListElement: posts.map((post, index) => ({
       "@type": "ListItem",
       position: index + 1,

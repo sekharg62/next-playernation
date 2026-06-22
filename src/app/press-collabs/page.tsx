@@ -3,15 +3,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Partnership | Player Nation",
-  description: "Media inquiries, brand partnerships, and collaboration opportunities with Player Nation.",
+  title: "Partnership | PlayerNation",
+  description: "Media inquiries, brand partnerships, and collaboration opportunities with PlayerNation.",
 };
 
 const collaborationTypes = [
   {
     title: "Media & press",
     description:
-      "Request interviews, product demos, logos, screenshots, or background on Player Nation and the Statmagic team.",
+      "Request interviews, product demos, logos, screenshots, or background on PlayerNation and the Statmagic team.",
   },
   {
     title: "Creators & influencers",
@@ -21,7 +21,7 @@ const collaborationTypes = [
   {
     title: "Clubs & academies",
     description:
-      "Bring Player Nation to your squad, academy, or league. We work with grassroots clubs and development programs worldwide.",
+      "Bring PlayerNation to your squad, academy, or league. We work with grassroots clubs and development programs worldwide.",
   },
   {
     title: "Brand partnerships",
@@ -34,7 +34,7 @@ export default function PressCollabsPage() {
   return (
     <ContentPageLayout
       title="Partnership"
-      description="Partner with Player Nation — whether you're covering the story, growing your community, or bringing pro tools to your club."
+      description="Partner with PlayerNation — whether you're covering the story, growing your community, or bringing pro tools to your club."
     >
       <section>
         <h2>Work with us</h2>
@@ -59,7 +59,7 @@ export default function PressCollabsPage() {
           2 business days.
         </p>
         <ul>
-          <li>Player Nation logo and brand guidelines</li>
+          <li>PlayerNation logo and brand guidelines</li>
           <li>App screenshots and product overview</li>
           <li>Founder quotes and company background</li>
           <li>Key stats and user milestones on request</li>

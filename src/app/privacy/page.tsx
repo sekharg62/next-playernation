@@ -3,21 +3,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Player Nation",
-  description: "How Player Nation collects, uses, and protects your personal information.",
+  title: "Privacy Policy | PlayerNation",
+  description: "How PlayerNation collects, uses, and protects your personal information.",
 };
 
 export default function PrivacyPage() {
   return (
     <LegalPageLayout title="Privacy Policy" lastUpdated="June 19, 2026">
       <p>
-        Player Nation (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is operated by
+        PlayerNation (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is operated by
         Statmagic. This Privacy Policy explains how we collect, use, disclose, and
         safeguard your information when you use our website, mobile applications, and
         related services (collectively, the &quot;Service&quot;).
       </p>
       <p>
-        By using Player Nation, you agree to the collection and use of information in
+        By using PlayerNation, you agree to the collection and use of information in
         accordance with this policy. If you do not agree, please do not use the Service.
       </p>
 
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
       <section>
         <h2>7. Children&apos;s privacy</h2>
         <p>
-          Player Nation may be used by young athletes with parental or guardian consent.
+          PlayerNation may be used by young athletes with parental or guardian consent.
           We do not knowingly collect personal information from children under 13 without
           appropriate consent. If you believe we have collected such information, please
           contact us so we can take appropriate action.

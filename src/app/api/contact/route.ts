@@ -58,7 +58,7 @@ export async function POST(request: Request) {
   const name = body.name?.trim() ?? "";
   const email = body.email?.trim() ?? "";
   const message = body.message?.trim() ?? "";
-  const subject = body.subject?.trim() ?? "Player Nation - Contact";
+  const subject = body.subject?.trim() ?? "PlayerNation - Contact";
   const captchaToken = body.captchaToken?.trim() ?? "";
 
   if (!name || !email || !message) {

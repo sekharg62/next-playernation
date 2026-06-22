@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Player Nation",
-  description: "Terms and conditions for using Player Nation.",
+  title: "Terms of Service | PlayerNation",
+  description: "Terms and conditions for using PlayerNation.",
 };
 
 export default function TermsPage() {
@@ -24,7 +24,7 @@ export default function TermsPage() {
       <section>
         <h2>1. Eligibility</h2>
         <p>
-          You must be at least 13 years old to use Player Nation. If you are under 18, you
+          You must be at least 13 years old to use PlayerNation. If you are under 18, you
           represent that you have permission from a parent or legal guardian to use the
           Service. Parents and guardians are responsible for supervising minors&apos; use
           of the platform.
@@ -43,7 +43,7 @@ export default function TermsPage() {
 
       <section>
         <h2>3. Use of the Service</h2>
-        <p>You agree to use Player Nation only for lawful purposes. You may not:</p>
+        <p>You agree to use PlayerNation only for lawful purposes. You may not:</p>
         <ul>
           <li>Upload content you do not have the right to share, including copyrighted match footage without permission</li>
           <li>Harass, abuse, or harm other users</li>
@@ -93,7 +93,7 @@ export default function TermsPage() {
           The Service is provided &quot;as is&quot; and &quot;as available&quot; without
           warranties of any kind, whether express or implied. We do not guarantee that
           stats, ratings, or insights will be error-free or suitable for professional
-          scouting decisions. Player Nation is a development and engagement tool, not a
+          scouting decisions. PlayerNation is a development and engagement tool, not a
           substitute for professional coaching or official league statistics.
         </p>
       </section>

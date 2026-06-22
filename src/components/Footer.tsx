@@ -15,7 +15,7 @@ const footerLinks = {
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
     {
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=play@statmagic.xyz&su=Player%20Nation%20Inquiry",
+      href: "/contact",
       label: "Contact",
     },
   ],
@@ -111,7 +111,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 mb-4 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 sm:flex-row sm:items-center">
           <p className="text-sm text-muted">
-            &copy; {year} Player Nation. All rights reserved.
+            &copy; {year} PlayerNation. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a

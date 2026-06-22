@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Player Nation",
+  title: "PlayerNation",
   description: "Your ultimate destination for player stats, insights, and sports gaming.",
 };
 
