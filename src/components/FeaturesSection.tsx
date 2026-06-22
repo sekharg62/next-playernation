@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const imageClassName =
-  "h-auto max-h-[min(62vh,520px)] w-full object-contain transition-[opacity,transform] duration-500 ease-in-out sm:max-h-[min(68vh,580px)] lg:max-h-[min(78vh,680px)]";
+  "h-auto max-h-[min(68vh,580px)] w-full object-contain transition-[opacity,transform] duration-500 ease-in-out sm:max-h-[min(74vh,640px)] lg:max-h-[min(84vh,760px)]";
 
 const features = [
   {
@@ -75,16 +75,16 @@ export default function FeaturesSection() {
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left — Feature image */}
           <div className="lg:sticky lg:top-24">
-            <div className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl">
+            <div className="mx-auto w-full max-w-lg sm:max-w-xl lg:max-w-2xl">
               <div className="relative flex w-full items-center justify-center">
                 {outgoingIndex !== null && (
                   <Image
                     src={features[outgoingIndex].image}
                     alt=""
                     aria-hidden
-                    width={512}
-                    height={910}
-                    sizes="(max-width: 720px) 90vw, (max-width: 1024px) 512px, 576px"
+                    width={576}
+                    height={1024}
+                    sizes="(max-width: 720px) 90vw, (max-width: 1024px) 576px, 672px"
                     className={`pointer-events-none absolute inset-0 ${imageClassName} ${
                       fadeActive ? "scale-[0.98] opacity-0" : "scale-100 opacity-100"
                     }`}
@@ -99,9 +99,9 @@ export default function FeaturesSection() {
                 <Image
                   src={displayedFeature.image}
                   alt={displayedFeature.title}
-                  width={512}
-                  height={910}
-                  sizes="(max-width: 720px) 90vw, (max-width: 1024px) 512px, 576px"
+                  width={576}
+                  height={1024}
+                  sizes="(max-width: 720px) 90vw, (max-width: 1024px) 576px, 672px"
                   className={`relative ${imageClassName} ${
                     fadeActive || outgoingIndex === null
                       ? "scale-100 opacity-100"

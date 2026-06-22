@@ -45,7 +45,7 @@ export default function HeroHighlightVideo({ src }: HeroHighlightVideoProps) {
   };
 
   return (
-    <div className="pointer-events-auto absolute top-[58%] left-1/2 z-20 aspect-video w-[78%] -translate-x-1/2 overflow-hidden rounded bg-black sm:rounded-lg">
+    <div className="pointer-events-auto absolute top-[52%] left-1/2 z-20 aspect-video w-[78%] -translate-x-1/2 overflow-hidden rounded bg-black sm:rounded-lg">
       <video
         ref={videoRef}
         src={src}

@@ -71,10 +71,10 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
               <div className="h-full max-h-[min(80vh,780px)] w-full max-w-lg rounded-full bg-primary/10 blur-3xl" />
             </div>
 
-            <div className="relative z-10 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8">
+            <div className="relative z-10 flex items-center justify-center gap-8 sm:gap-10 lg:gap-14">
               <div className="relative z-20 w-fit -rotate-2 lg:-rotate-3">
                 <Image
-                  src="/final-input.png"
+                  src="/input.png"
                   alt="Submit your game"
                   width={520}
                   height={1040}
@@ -85,21 +85,21 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
               </div>
 
               <Image
-                src="/Arrow.svg"
+                src="/arrow-new.svg"
                 alt=""
                 aria-hidden
                 width={100}
                 height={100}
-                className="pointer-events-none absolute top-[5%] left-1/2 z-30 h-14 w-14 -translate-x-1/2 -translate-y-1/2 sm:h-16 sm:w-16 lg:top-[5%] lg:h-[4.5rem] lg:w-[4.5rem]"
+                className="pointer-events-none absolute top-[8%] left-1/2 z-30 h-20 w-20 -translate-x-1/2  rotate-[360deg] sm:h-20 sm:w-20 lg:h-24 lg:w-24"
               />
 
               <div className="pointer-events-none relative z-0 w-fit rotate-8 lg:rotate-10">
                 <Image
-                  src="/final-input.png"
+                  src="/feature-three.png"
                   alt="Match analysis and stats"
                   width={540}
                   height={1080}
-                  className="h-[min(55vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
+                  className="h-[min(60vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
                   priority
                 />
               </div>
