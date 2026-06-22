@@ -11,7 +11,7 @@ type HeroSectionProps = {
 };
 
 const videoUrl =
-  "https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/720e3708-5d57-4b24-b118-8130965706df/match_highlights_1772524927755_with_music.mp4";
+  "https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/66cd8f97-f978-4d3b-ad97-ba2ff728e7b4/2f0d338d-42c3-4754-8793-c73f3c70e974/top_moments_1_1782031540740_with_music.mp4";
 
 export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (

@@ -1,43 +1,63 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const imageClassName =
+  "h-auto max-h-[min(62vh,520px)] w-full object-contain transition-[opacity,transform] duration-500 ease-in-out sm:max-h-[min(68vh,580px)] lg:max-h-[min(78vh,680px)]";
 
 const features = [
   {
     title: "See your game the way pros see theirs",
     description:
       "Upload your game and get every action tracked automatically. Explore 100+ stats, pass maps and shot maps, so you can see not just the score, but exactly how it happened.",
-    image: "/output-img.png",
+    image: "/feature-one.png",
   },
   {
     title: "Every big moment, ready to share",
     description:"Every game updates your ratings and evolves your FIFA-style ratings card. Game by game, you'll build a living record of your performances, progress and milestones.",
-      image: "/input-img.png",
+      image: "/feature-two.png",
   },
   {
     title: "Get rated every game",
     description:
       "Every match earns you a detailed rating across your whole game, plus a FIFA-style card that grows with you. Each performance updates your card, so a season of matches becomes one evolving record — yours to track, and yours to show off.",
-    image: "/output-img.png",
+    image: "/feature-three.png",
   },
   {
     title: "Know exactly what to work on next",
     description:
    "Know what's working, what isn't and what to improve next. Then track your progress game after game.",
-      image: "/output-img.png",
+      image: "/feature-four.png",
   },
   {
     title: "The locker room never closes",
     description:"Build your profile and create groups for your club, academy, team or squad. Every game becomes part of a shared story that lives on long after the final whistle.",
-    image: "/input-img.png",
+    image: "/feature-five.png",
   },
 ];
 
 export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
+  const [outgoingIndex, setOutgoingIndex] = useState<number | null>(null);
+  const [fadeActive, setFadeActive] = useState(false);
 
-  const activeFeature = features[activeIndex];
+  useEffect(() => {
+    if (activeIndex === imageIndex) return;
+
+    setOutgoingIndex(imageIndex);
+    setImageIndex(activeIndex);
+    setFadeActive(false);
+
+    const frame = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setFadeActive(true));
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [activeIndex, imageIndex]);
+
+  const displayedFeature = features[imageIndex];
 
   return (
     <section id="features" className="scroll-mt-20">
@@ -55,16 +75,38 @@ export default function FeaturesSection() {
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left — Feature image */}
           <div className="lg:sticky lg:top-24">
-            <div className="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              <div className="relative w-full">
+            <div className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl">
+              <div className="relative flex w-full items-center justify-center">
+                {outgoingIndex !== null && (
+                  <Image
+                    src={features[outgoingIndex].image}
+                    alt=""
+                    aria-hidden
+                    width={512}
+                    height={910}
+                    sizes="(max-width: 720px) 90vw, (max-width: 1024px) 512px, 576px"
+                    className={`pointer-events-none absolute inset-0 ${imageClassName} ${
+                      fadeActive ? "scale-[0.98] opacity-0" : "scale-100 opacity-100"
+                    }`}
+                    onTransitionEnd={(event) => {
+                      if (event.propertyName !== "opacity") return;
+                      setOutgoingIndex((current) =>
+                        current === outgoingIndex ? null : current,
+                      );
+                    }}
+                  />
+                )}
                 <Image
-                  key={activeFeature.image}
-                  src={activeFeature.image}
-                  alt={activeFeature.title}
+                  src={displayedFeature.image}
+                  alt={displayedFeature.title}
                   width={512}
                   height={910}
-                  sizes="(max-width: 720px) 100vw, (max-width: 1024px) 448px, 512px"
-                  className="h-auto w-full object-contain transition-opacity duration-500"
+                  sizes="(max-width: 720px) 90vw, (max-width: 1024px) 512px, 576px"
+                  className={`relative ${imageClassName} ${
+                    fadeActive || outgoingIndex === null
+                      ? "scale-100 opacity-100"
+                      : "scale-[1.02] opacity-0"
+                  }`}
                 />
               </div>
 
