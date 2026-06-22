@@ -2,6 +2,7 @@ import Link from "next/link";
 import BrandIcon from "./BrandIcon";
 import AppStoreBadge from "./AppStoreBadge";
 import GooglePlayBadge from "./GooglePlayBadge";
+import ManageCookiesButton from "./ManageCookiesButton";
 import SectionLink from "./SectionLink";
 
 const footerLinkSections = [
@@ -28,7 +29,7 @@ const footerLinkSections = [
     title: "Privacy",
     links: [
       { href: "/contact", label: "Contact" },
-      { href: "/manage-cookies", label: "Manage Cookies" },
+      { href: "/manage-cookies", label: "Manage Cookies", openCookieModal: true },
     ],
   },
 ] as const;
@@ -36,13 +37,21 @@ function FooterLink({
   href,
   label,
   sectionId,
+  openCookieModal,
 }: {
   href: string;
   label: string;
   sectionId?: string;
+  openCookieModal?: boolean;
 }) {
   const className =
     "inline-block text-sm text-muted transition-colors hover:text-primary";
+
+  if (openCookieModal) {
+    return (
+      <ManageCookiesButton className={className}>{label}</ManageCookiesButton>
+    );
+  }
 
   if (href.startsWith("http")) {
     return (
@@ -78,7 +87,7 @@ export default function Footer() {
           <div className="flex flex-col items-start">
             <BrandIcon />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              Enabling pro-level sports experiences for every player.
+              Enabling pro-level sports experiences for everyone
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <AppStoreBadge className="h-10" />
@@ -100,6 +109,9 @@ export default function Footer() {
                         href={link.href}
                         label={link.label}
                         sectionId={"sectionId" in link ? link.sectionId : undefined}
+                        openCookieModal={
+                          "openCookieModal" in link ? link.openCookieModal : undefined
+                        }
                       />
                     </li>
                   ))}

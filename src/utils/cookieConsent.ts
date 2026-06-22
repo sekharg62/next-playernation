@@ -127,7 +127,9 @@ export function rejectOptionalCookies(): void {
 
 export const COOKIE_CONSENT_OPEN_EVENT = "cookie-consent-open";
 
-/** Re-open the banner after a new category or material privacy policy change. */
-export function requestCookieConsentReview(): void {
-  window.dispatchEvent(new CustomEvent(COOKIE_CONSENT_OPEN_EVENT));
+/** Re-open the consent modal (e.g. from footer or /manage-cookies). */
+export function requestCookieConsentReview(options?: { showSettings?: boolean }): void {
+  window.dispatchEvent(
+    new CustomEvent(COOKIE_CONSENT_OPEN_EVENT, { detail: options ?? { showSettings: true } }),
+  );
 }
