@@ -63,22 +63,22 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
           </div>
 
           {/* Right — Input → Output visual */}
-          <div className="relative flex min-h-[min(52vh,440px)] items-center justify-center sm:min-h-[min(58vh,500px)] lg:min-h-0 lg:h-full lg:justify-end">
+          <div className="relative flex min-h-[min(58vh,500px)] items-center justify-center sm:min-h-[min(64vh,560px)] lg:min-h-0 lg:h-full lg:justify-end">
             <div
               className="pointer-events-none absolute inset-0 flex items-center justify-center"
               aria-hidden
             >
-              <div className="h-full max-h-[min(72vh,700px)] w-full max-w-md rounded-full bg-primary/10 blur-3xl" />
+              <div className="h-full max-h-[min(80vh,780px)] w-full max-w-lg rounded-full bg-primary/10 blur-3xl" />
             </div>
 
             <div className="relative z-10 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8">
-              <div className="relative z-20 w-fit -rotate-6 lg:-rotate-8">
+              <div className="relative z-20 w-fit -rotate-2 lg:-rotate-3">
                 <Image
                   src="/final-input.png"
                   alt="Submit your game"
                   width={520}
                   height={1040}
-                  className="pointer-events-none h-[min(44vh,380px)] w-auto object-contain sm:h-[min(50vh,440px)] lg:h-[min(62vh,580px)] xl:h-[min(68vh,640px)]"
+                  className="pointer-events-none h-[min(55vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
                   priority
                 />
                 <HeroHighlightVideo src={videoUrl} />
@@ -90,16 +90,16 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                 aria-hidden
                 width={100}
                 height={100}
-                className="pointer-events-none absolute top-[28%] left-1/2 z-30 h-14 w-14 -translate-x-1/2 -translate-y-1/2 sm:h-16 sm:w-16 lg:top-[26%] lg:h-[4.5rem] lg:w-[4.5rem]"
+                className="pointer-events-none absolute top-[5%] left-1/2 z-30 h-14 w-14 -translate-x-1/2 -translate-y-1/2 sm:h-16 sm:w-16 lg:top-[5%] lg:h-[4.5rem] lg:w-[4.5rem]"
               />
 
-              <div className="pointer-events-none relative z-0 w-fit rotate-6 lg:rotate-8">
+              <div className="pointer-events-none relative z-0 w-fit rotate-8 lg:rotate-10">
                 <Image
                   src="/final-input.png"
                   alt="Match analysis and stats"
                   width={540}
                   height={1080}
-                  className="h-[min(44vh,380px)] w-auto object-contain sm:h-[min(50vh,440px)] lg:h-[min(62vh,580px)] xl:h-[min(68vh,640px)]"
+                  className="h-[min(55vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
                   priority
                 />
               </div>
