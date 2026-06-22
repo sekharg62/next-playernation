@@ -29,10 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen min-w-0 flex-col overflow-x-hidden bg-background antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen min-w-0 flex-col bg-background antialiased`}
       >
         <Navbar />
-        <main className="min-w-0 flex-1 overflow-x-hidden">{children}</main>
+        <main className="min-w-0 flex-1 overflow-x-clip pt-[4.25rem]">{children}</main>
         <Footer />
         <HashScroll />
         <CookieConsent />

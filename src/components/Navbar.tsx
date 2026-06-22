@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 ${navBlur} ${
+      className={`fixed inset-x-0 top-0 z-50 w-full ${navBlur} ${
         mobileOpen ? "max-lg:border-b-0" : "border-b border-border/40"
       }`}
     >
