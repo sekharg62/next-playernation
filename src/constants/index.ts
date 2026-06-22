@@ -4,6 +4,8 @@ export const BASE_URL =
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://theplayernation.com";
 
+export const CONTACT_EMAIL = "play@statmagic.xyz";
+
 /** Cloudflare Turnstile — dev uses interactive test key (requires user action). */
 export const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??

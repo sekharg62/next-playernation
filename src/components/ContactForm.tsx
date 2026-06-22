@@ -1,10 +1,8 @@
 "use client";
 
-import { TURNSTILE_SITE_KEY } from "@/constants";
+import { CONTACT_EMAIL, TURNSTILE_SITE_KEY } from "@/constants";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { FormEvent, useRef, useState } from "react";
-
-const CONTACT_EMAIL = "play@statmagic.xyz";
 
 type ContactFormProps = {
   subject: string;
