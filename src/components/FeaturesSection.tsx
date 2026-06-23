@@ -111,7 +111,7 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className=" flex items-center justify-center gap-2"
+                className=" flex items-center justify-center gap-2 mt-2"
                 role="tablist"
                 aria-label="Feature slides"
               >
