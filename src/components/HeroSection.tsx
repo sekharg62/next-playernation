@@ -28,7 +28,7 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                 {avatarImages.map((src, i) => (
                   <div
                     key={`${src}-${i}`}
-                    className="relative h-8 w-8  overflow-hidden rounded-full border-2 border-background"
+                    className="relative blur-[1px] h-8 w-8  overflow-hidden rounded-full border-2 border-background"
                   >
                     <Image
                       src={src}
