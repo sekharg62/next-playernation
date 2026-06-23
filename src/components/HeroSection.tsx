@@ -11,6 +11,9 @@ type HeroSectionProps = {
   totalUserCount: number;
 };
 
+const outputVideoClassName =
+  "pointer-events-auto absolute left-1/2 z-10 -translate-x-1/2 overflow-hidden rounded-[7%] bg-black top-[5.5%] h-[86%] w-[81%] sm:top-[5%] sm:h-[87%] sm:w-[82%] md:top-[4.5%] md:h-[88%] md:w-[84%] lg:top-[3%] lg:h-[94%] lg:w-[88%] lg:rounded-[8%]";
+
 const videoUrl ="https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/eee9f2ca-442e-4534-a3f0-88f6a139a1fd/match_highlights_1781787497019_with_music.mp4";
 export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (
@@ -52,7 +55,7 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
 
             {/* Description */}
             <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-            Upload your game footage and get pro-level stats, ratings, insights and highlights. Built for every player, coach and parent, not just for the pros.
+            Upload your full game footage and get pro-level stats, ratings, insights and highlights. Built for every player, coach and parent, not just for the pros.
             </p>
 
             {/* Store badges */}
@@ -76,8 +79,8 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                 <Image
                   src="/input.png"
                   alt="Submit your game"
-                  width={520}
-                  height={1040}
+                  width={1040}
+                  height={2080}
                   className="pointer-events-none h-[min(55vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
                   priority
                 />
@@ -93,15 +96,21 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                 className="pointer-events-none absolute top-[8%] left-1/2 z-30 h-20 w-20 -translate-x-1/2  rotate-[360deg] sm:h-20 sm:w-20 lg:h-24 lg:w-24"
               />
 
-              <div className="pointer-events-none relative z-0 w-fit rotate-8 lg:rotate-10">
-                <Image
-                  src="/feature-three.png"
-                  alt="Match analysis and stats"
-                  width={540}
-                  height={1080}
-                  className="h-[min(60vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
-                  priority
-                />
+              <div className="relative z-0 w-fit rotate-0 lg:rotate-5">
+                <div className="relative overflow-hidden">
+                  <Image
+                    src="/output.png"
+                    alt="Match analysis and stats"
+                    width={540}
+                    height={1080}
+                    className="pointer-events-none h-[min(60vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
+                    priority
+                  />
+                 {/*  <HeroHighlightVideo
+                    src="/output-vdo.mp4"
+                    containerClassName={outputVideoClassName}
+                  /> */}
+                </div>
               </div>
             </div>
           </div>

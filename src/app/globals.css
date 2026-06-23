@@ -32,6 +32,26 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+.hero-highlight-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-highlight-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.hero-highlight-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.hero-highlight-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
+.hero-highlight-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
 .advantages-orbit-stage {
   --orbit-radius: 5.75rem;
   --orbit-duration: 48s;

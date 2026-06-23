@@ -65,12 +65,11 @@ understanding of the game.`,
        role: "Coach",
   },
   {
-    image: "https://www.calai.app/humans/jeremiah.jpg",
-    countryFlag: "https://flagcdn.com/w40/za.png",
-    name: "Nomsa Dlamini",
-    review:
-      "Player Nation made it easy to track development and celebrate wins as a family.",
-    role: "Parent",
+    image: "/andreas.jpeg",
+    countryFlag: "https://flagcdn.com/w40/se.png",
+    name: "Andreas",
+    review:"Playernation has become an invaluable coaching tool, helping us track player development and engage players and parents more effectively. The team behind it is incredibly responsive, easy to work with, and genuinely committed to improving the platform based on our feedback.",
+      role: "Coach",
   },
 ];
 
