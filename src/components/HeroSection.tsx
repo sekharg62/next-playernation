@@ -99,7 +99,7 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
               <div className="relative z-0 w-fit rotate-0 lg:rotate-5">
                 <div className="relative overflow-hidden">
                   <Image
-                    src="/output.png"
+                    src="/op.png"
                     alt="Match analysis and stats"
                     width={540}
                     height={1080}
