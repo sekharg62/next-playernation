@@ -5,7 +5,7 @@ import HeroHighlightVideo from "./HeroHighlightVideo";
 import { formatCompactNumber } from "@/utils/formatCompactNumber";
 
 // Add more avatars here (must exist in /public)
-const avatarImages = ["/player1.png", "/player2.jpg", "/player3.jpg", "/player4.jpg"];
+const avatarImages = ["/player1.png", "/player2.png", "/player3.png", "/player4.png"];
 
 type HeroSectionProps = {
   totalUserCount: number;
@@ -28,7 +28,7 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                 {avatarImages.map((src, i) => (
                   <div
                     key={`${src}-${i}`}
-                    className="relative h-8 w-8 blur-[1px] overflow-hidden rounded-full border-2 border-background"
+                    className="relative h-8 w-8  overflow-hidden rounded-full border-2 border-background"
                   >
                     <Image
                       src={src}
