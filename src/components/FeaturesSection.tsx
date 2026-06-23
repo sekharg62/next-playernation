@@ -33,7 +33,7 @@ const features = [
   {
     title: "The locker room never closes",
     description:"Build your profile and create groups for your club, academy, team or squad. Every game becomes part of a shared story that lives on long after the final whistle.",
-    image: "/feature-five.png",
+    image: "/feature-5.png",
   },
 ];
 
