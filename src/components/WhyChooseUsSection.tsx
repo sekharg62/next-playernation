@@ -23,7 +23,7 @@ const reasons: Reason[] = [
   {
     title: "Builds your sporting identity",
     description:
-      "PlayerNation isn't just for today's game. It's a living record of your performances, memories and milestones.",
+      "PlayerNation is a living record of your performances, memories and milestones.",
     icon: "/Trophy.svg",
   },
 ];
