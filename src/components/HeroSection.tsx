@@ -5,7 +5,7 @@ import HeroHighlightVideo from "./HeroHighlightVideo";
 import { formatCompactNumber } from "@/utils/formatCompactNumber";
 
 // Add more avatars here (must exist in /public)
-const avatarImages = ["/sid.png", "/sajal.jpg", "/lakhani.jpg", "/ritwik.jpg"];
+const avatarImages = ["/player1.png", "/player2.jpg", "/player3.jpg", "/player4.jpg"];
 
 type HeroSectionProps = {
   totalUserCount: number;
