@@ -69,7 +69,7 @@ understanding of the game.`,
     countryFlag: "https://flagcdn.com/w40/se.png",
     name: "Andreas",
     review:"Playernation has become an invaluable coaching tool, helping us track player development and engage players and parents more effectively. The team behind it is incredibly responsive, easy to work with, and genuinely committed to improving the platform based on our feedback.",
-      role: "Coach",
+      role: "Coach & Parent",
   },
 ];
 

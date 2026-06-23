@@ -180,9 +180,3 @@ export default function FeaturesSection() {
     </section>
   );
 }
-
-
-/* 
-
-
-*/

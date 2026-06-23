@@ -17,11 +17,11 @@ const reasons: Reason[] = [
   {
     title: "We deliver answers, not dashboards",
     description:
-      "PlayerNation isn't just for today's game. It's a living record of your performances, memories and milestones.",
+      "No tagging. No learning curve. Just the stats, highlights and insights you actually care about.",
     icon: "/brain.svg",
   },
   {
-    title: "Every game builds your sporting identity",
+    title: "Builds your sporting identity",
     description:
       "PlayerNation isn't just for today's game. It's a living record of your performances, memories and milestones.",
     icon: "/Trophy.svg",
