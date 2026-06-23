@@ -28,7 +28,7 @@ const features = [
     title: "Know exactly what to work on next",
     description:
    "Know what's working, what isn't and what to improve next. Then track your progress game after game.",
-      image: "/feature-four.png",
+      image: "/feature-4.png",
   },
   {
     title: "The locker room never closes",
@@ -180,3 +180,9 @@ export default function FeaturesSection() {
     </section>
   );
 }
+
+
+/* 
+
+
+*/
