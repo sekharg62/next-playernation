@@ -38,7 +38,12 @@ const reviews: Review[] = [
     role: "Coach",
     review:
       "Player Nation has been a valuable addition to our team's performance analysis. It has assisted the coach and players to easily understand how touch, control, passing, dribbling etc. contributes to the team's success. The highlights videos are particularly appreciated by the players to quickly watch their moments on the ball!",
-  },
+  },{
+    name:"Lewis",
+    country: "United States",
+    countryFlag: "https://flagcdn.com/w40/us.png",
+    role: "Coach",
+    review:"Our High School Varsity program and Travel Club uses PlayerNation as a tool to improve our student-athletes. It’s dramatically improved our training and match play. We are able to identify our team’s and players’ areas which need improvements and tailor our training methodology to them. Access to data and players’ clips are within a day or two of uploading our match footage.Would heartily recommend this product for the quality of data provided, the support staff’s attention to detail and help when required."}
 ];
 
 function getInitials(name: string) {
@@ -145,7 +150,7 @@ export default function ReviewSection() {
             id="reviews-heading"
             className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           >
-            What our community says
+            Don't take our word for it
           </h2>
         </div>
 
