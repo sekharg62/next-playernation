@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const SWIPE_THRESHOLD_PX = 50;
 
@@ -79,20 +79,120 @@ function ReviewAvatar({ name, image }: { name: string; image?: string }) {
   );
 }
 
-function ReviewCard({ item }: { item: Review }) {
+const LONG_REVIEW_CHAR_THRESHOLD = 150;
+const EXPAND_TRANSITION = "duration-500 ease-in-out";
+
+function isLongReview(review: string) {
+  return review.length > LONG_REVIEW_CHAR_THRESHOLD;
+}
+
+function ReviewCard({ item, compact = false }: { item: Review; compact?: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+  const [isCollapsing, setIsCollapsing] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const collapsedHeightRef = useRef(0);
+  const [contentMaxHeight, setContentMaxHeight] = useState<number | undefined>(undefined);
+  const showToggle = compact && isLongReview(item.review);
+
+  useLayoutEffect(() => {
+    if (!showToggle) return;
+
+    const contentEl = contentRef.current;
+    if (!contentEl) return;
+
+    if (!expanded) {
+      const collapsedHeight = contentEl.scrollHeight;
+      collapsedHeightRef.current = collapsedHeight;
+      setContentMaxHeight(collapsedHeight);
+      return;
+    }
+
+    const previousMaxHeight = contentEl.style.maxHeight;
+    contentEl.style.maxHeight = "none";
+    const fullHeight = contentEl.scrollHeight;
+    contentEl.style.maxHeight = previousMaxHeight;
+
+    setContentMaxHeight(collapsedHeightRef.current);
+
+    let expandFrame = 0;
+    const startFrame = requestAnimationFrame(() => {
+      expandFrame = requestAnimationFrame(() => {
+        setContentMaxHeight(fullHeight);
+      });
+    });
+
+    return () => {
+      cancelAnimationFrame(startFrame);
+      cancelAnimationFrame(expandFrame);
+    };
+  }, [showToggle, item.review, expanded]);
+
+  const handleToggle = () => {
+    if (!expanded) {
+      setExpanded(true);
+      return;
+    }
+
+    setIsCollapsing(true);
+    setContentMaxHeight(collapsedHeightRef.current);
+  };
+
+  const handleTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
+    if (event.propertyName !== "max-height" || !isCollapsing) return;
+    setIsCollapsing(false);
+    setExpanded(false);
+  };
+
+  const reviewText = (
+    <p
+      className={`text-[15px] leading-relaxed text-foreground/90 sm:text-base ${
+        showToggle && !expanded && !isCollapsing ? "line-clamp-4" : compact ? "" : "flex-1"
+      }`}
+    >
+      &ldquo;{item.review}&rdquo;
+    </p>
+  );
+
   return (
-    <article className="relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-linear-to-br from-[#141414] to-[#0a0a0a] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.45)] sm:p-7">
+    <article
+      className={`relative flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-linear-to-br from-[#141414] to-[#0a0a0a] p-5 shadow-[0_10px_40px_rgba(0,0,0,0.45)] sm:p-7 ${
+        compact ? "h-auto" : "h-full"
+      }`}
+    >
       <div
         className="absolute inset-y-0 left-0 w-1 bg-linear-to-b from-primary via-primary/70 to-primary/20"
         aria-hidden
       />
 
-      <div className="flex h-full flex-col pl-2">
-        <p className="flex-1 text-[15px] leading-relaxed text-foreground/90 sm:text-base">
-          &ldquo;{item.review}&rdquo;
-        </p>
+      <div className={`flex flex-col pl-2 ${compact ? "" : "h-full"}`}>
+        {showToggle ? (
+          <div
+            ref={contentRef}
+            onTransitionEnd={handleTransitionEnd}
+            className={`overflow-hidden transition-[max-height] will-change-[max-height] ${EXPAND_TRANSITION}`}
+            style={{ maxHeight: contentMaxHeight }}
+          >
+            {reviewText}
+          </div>
+        ) : (
+          reviewText
+        )}
 
-        <div className="mt-auto border-t border-border pt-5">
+        {showToggle ? (
+          <button
+            type="button"
+            onClick={handleToggle}
+            className="mt-2 self-start text-sm font-semibold text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          >
+            {expanded ? "See less" : "See more"}
+          </button>
+        ) : null}
+
+        <div
+          className={`border-t border-border pt-4 ${
+            compact ? "mt-4" : "mt-auto pt-5"
+          }`}
+        >
           <div className="flex items-center gap-3">
             <ReviewAvatar name={item.name} image={item.image} />
             <div className="min-w-0">
@@ -208,12 +308,14 @@ export default function ReviewSection() {
             onTouchEnd={handleTouchEnd}
           >
             <div
-              className="flex items-stretch gap-5 transition-transform duration-500 ease-in-out md:gap-6"
+              className={`flex gap-5 transition-transform duration-500 ease-in-out md:gap-6 ${
+                itemsPerView === 1 ? "items-start" : "items-stretch"
+              }`}
               style={{ transform: `translateX(${slideOffset})` }}
             >
               {reviews.map((item) => (
                 <div key={item.name} className="flex shrink-0" style={{ width: cardWidth }}>
-                  <ReviewCard item={item} />
+                  <ReviewCard item={item} compact={itemsPerView === 1} />
                 </div>
               ))}
             </div>

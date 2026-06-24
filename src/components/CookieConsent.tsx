@@ -337,7 +337,7 @@ export default function CookieConsent() {
 
           {view === "intro" && (
             <p className="mt-4 text-sm text-muted">
-              You can update your cookie preferences at any time from the footer under{" "}
+              You can update your cookie preferences at any time from {" "}
               <span className="font-medium text-foreground">Manage Cookies</span>.
             </p>
           )}
