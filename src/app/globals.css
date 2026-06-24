@@ -53,7 +53,7 @@ body {
 }
 
 .advantages-orbit-stage {
-  --orbit-radius: 5.75rem;
+  --orbit-radius: 7.25rem;
   --orbit-duration: 48s;
 }
 
@@ -89,8 +89,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 8.5rem;
-  height: 8.5rem;
+  width: 7.25rem;
+  height: 7.25rem;
   border-radius: 9999px;
   border: 1px solid rgb(255 255 255 / 10%);
   background: linear-gradient(165deg, rgb(18 18 18 / 95%), rgb(8 8 8 / 98%));

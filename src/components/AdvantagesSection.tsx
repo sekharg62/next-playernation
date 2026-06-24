@@ -114,7 +114,7 @@ export default function AdvantagesSection() {
           </h2>
         </div>
 
-        <div className="advantages-orbit-stage relative mx-auto aspect-square w-full max-w-[min(100%,22rem)] sm:max-w-lg lg:max-w-xl">
+        <div className="advantages-orbit-stage relative mx-auto aspect-square w-full max-w-[min(100%,26rem)] sm:max-w-lg lg:max-w-xl">
           <svg
             className="pointer-events-none absolute inset-0 h-full w-full"
             viewBox="0 0 400 400"
