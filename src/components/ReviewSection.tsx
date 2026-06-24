@@ -2,7 +2,9 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const SWIPE_THRESHOLD_PX = 50;
 
 type Review = {
   name: string;
@@ -38,12 +40,15 @@ const reviews: Review[] = [
     role: "Coach",
     review:
       "Player Nation has been a valuable addition to our team's performance analysis. It has assisted the coach and players to easily understand how touch, control, passing, dribbling etc. contributes to the team's success. The highlights videos are particularly appreciated by the players to quickly watch their moments on the ball!",
-  },{
-    name:"Lewis",
+  },
+  {
+    name: "Lewis",
     country: "United States",
     countryFlag: "https://flagcdn.com/w40/us.png",
     role: "Coach",
-    review:"Our High School Varsity program and Travel Club uses PlayerNation as a tool to improve our student-athletes. It’s dramatically improved our training and match play. We are able to identify our team’s and players’ areas which need improvements and tailor our training methodology to them. Access to data and players’ clips are within a day or two of uploading our match footage.Would heartily recommend this product for the quality of data provided, the support staff’s attention to detail and help when required."}
+    review:
+      "Our High School Varsity program and Travel Club uses PlayerNation as a tool to improve our student-athletes. It's dramatically improved our training and match play. We are able to identify our team's and players' areas which need improvements and tailor our training methodology to them. Access to data and players' clips are within a day or two of uploading our match footage. Would heartily recommend this product for the quality of data provided, the support staff's attention to detail and help when required.",
+  },
 ];
 
 function getInitials(name: string) {
@@ -115,6 +120,7 @@ function ReviewCard({ item }: { item: Review }) {
 export default function ReviewSection() {
   const [itemsPerView, setItemsPerView] = useState(2);
   const [index, setIndex] = useState(0);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -142,6 +148,27 @@ export default function ReviewSection() {
       : `calc(-${index} * (100% + 1.25rem))`;
   const cardWidth = itemsPerView === 2 ? "calc(50% - 0.75rem)" : "100%";
 
+  const goPrev = () => setIndex((current) => Math.max(0, current - 1));
+  const goNext = () => setIndex((current) => Math.min(maxIndex, current + 1));
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? 0;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touchEndX = event.changedTouches[0]?.clientX ?? 0;
+    const deltaX = touchStartX.current - touchEndX;
+
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX) return;
+
+    if (deltaX > 0) {
+      goNext();
+      return;
+    }
+
+    goPrev();
+  };
+
   return (
     <section aria-labelledby="reviews-heading">
       <div className="mx-auto max-w-7.5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -154,28 +181,32 @@ export default function ReviewSection() {
           </h2>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-5xl">
+        <div className="relative mx-auto mt-12 max-w-5xl px-4 sm:px-6">
           <button
             type="button"
-            onClick={() => setIndex((current) => Math.max(0, current - 1))}
+            onClick={goPrev}
             disabled={!canGoPrev}
             aria-label="Previous review"
-            className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition-colors hover:border-primary/40 hover:text-primary disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
+            className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition-colors hover:border-primary/40 hover:text-primary disabled:pointer-events-none disabled:opacity-35 sm:left-3 sm:h-10 sm:w-10"
           >
             <ChevronLeft className="h-5 w-5" aria-hidden />
           </button>
 
           <button
             type="button"
-            onClick={() => setIndex((current) => Math.min(maxIndex, current + 1))}
+            onClick={goNext}
             disabled={!canGoNext}
             aria-label="Next review"
-            className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition-colors hover:border-primary/40 hover:text-primary disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
+            className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition-colors hover:border-primary/40 hover:text-primary disabled:pointer-events-none disabled:opacity-35 sm:right-3 sm:h-10 sm:w-10"
           >
             <ChevronRight className="h-5 w-5" aria-hidden />
           </button>
 
-          <div className="overflow-hidden px-2 sm:px-6">
+          <div
+            className="overflow-hidden px-10 touch-pan-y sm:px-12"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className="flex items-stretch gap-5 transition-transform duration-500 ease-in-out md:gap-6"
               style={{ transform: `translateX(${slideOffset})` }}

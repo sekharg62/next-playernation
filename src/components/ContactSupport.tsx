@@ -2,10 +2,16 @@ import { CONTACT_EMAIL } from "@/constants";
 
 type ContactSupportProps = {
   mailtoSubject?: string;
+  title?: string;
+  description?: string;
+  reachOutLabel?: string;
 };
 
 export default function ContactSupport({
   mailtoSubject = "PlayerNation - Support",
+  title = "Contact Support",
+  description = "For support or questions, please email us directly. We're here to help.",
+  reachOutLabel,
 }: ContactSupportProps) {
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(mailtoSubject)}`;
 
@@ -28,16 +34,22 @@ export default function ContactSupport({
       </div>
 
       <h2 className="mt-8 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-        Contact Support
+        {title}
       </h2>
 
-      <p className="mx-auto mt-4 max-w-sm text-base leading-relaxed text-muted sm:text-lg">
-        For support or questions, please email us directly. We&apos;re here to help.
+      <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted sm:text-lg">
+        {description}
       </p>
+
+      {reachOutLabel ? (
+        <p className="mt-8 text-sm font-medium text-muted">{reachOutLabel}</p>
+      ) : null}
 
       <a
         href={mailtoHref}
-        className="mt-8 inline-block text-lg font-semibold text-foreground underline underline-offset-4 transition-colors hover:text-primary sm:text-xl"
+        className={`inline-block text-lg font-semibold text-foreground underline underline-offset-4 transition-colors hover:text-primary sm:text-xl ${
+          reachOutLabel ? "mt-2" : "mt-8"
+        }`}
       >
         {CONTACT_EMAIL}
       </a>
