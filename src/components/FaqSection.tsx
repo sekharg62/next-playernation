@@ -45,7 +45,7 @@ const faqs: FaqItem[] = [
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="faq" className="scroll-mt-20" aria-labelledby="faq-heading">
