@@ -11,9 +11,6 @@ type HeroSectionProps = {
   totalUserCount: number;
 };
 
-const outputVideoClassName =
-  "pointer-events-auto absolute left-1/2 z-10 -translate-x-1/2 overflow-hidden rounded-[7%] bg-black top-[5.5%] h-[86%] w-[81%] sm:top-[5%] sm:h-[87%] sm:w-[82%] md:top-[4.5%] md:h-[88%] md:w-[84%] lg:top-[3%] lg:h-[94%] lg:w-[88%] lg:rounded-[8%]";
-
 const videoUrl ="https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/eee9f2ca-442e-4534-a3f0-88f6a139a1fd/9f28d433-3221-4867-aaa1-934fd9e68c7d/all_touches_1782211752312.mp4";
 export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (

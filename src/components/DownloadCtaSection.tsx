@@ -1,4 +1,3 @@
-import Image from "next/image";
 import AppStoreBadge from "@/components/AppStoreBadge";
 import GooglePlayBadge from "@/components/GooglePlayBadge";
 import { formatCompactNumber } from "@/utils/formatCompactNumber";

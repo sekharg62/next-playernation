@@ -1,6 +1,4 @@
-import { isAxiosError } from "axios";
 import { BASE_URL } from "@/constants";
-import apiClient from "./apiClient";
 
 export async function fetchTotalUserCount(): Promise<number> {
   try {

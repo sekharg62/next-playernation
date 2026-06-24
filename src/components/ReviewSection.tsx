@@ -150,7 +150,7 @@ export default function ReviewSection() {
             id="reviews-heading"
             className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           >
-            Don't take our word for it
+            Don&apos;t take our word for it
           </h2>
         </div>
 
