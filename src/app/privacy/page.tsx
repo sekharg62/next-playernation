@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPageLayout title="Privacy Policy" lastUpdated="June 19, 2026">
+    <LegalPageLayout title="Privacy Policy" lastUpdated="June 22, 2026">
       <p>
         PlayerNation (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is operated by
         Statmagic. This Privacy Policy explains how we collect, use, disclose, and

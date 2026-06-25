@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "PlayerNation",
   description: "Your ultimate destination for player stats, insights, and sports gaming.",
+  icons: {
+    icon: [{ url: "/squareBrandLogo.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/squareBrandLogo.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/squareBrandLogo.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

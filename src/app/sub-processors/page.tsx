@@ -194,7 +194,7 @@ function ContactCell({ contact }: { contact: ContactInfo }) {
 
 export default function SubProcessorsPage() {
   return (
-    <LegalPageLayout title="Sub-processors" lastUpdated="June 14, 2026" wide>
+    <LegalPageLayout title="Sub-processors" lastUpdated="June 22, 2026" wide>
       <p>
         This list forms part of, and should be read together with, our{" "}
         <Link

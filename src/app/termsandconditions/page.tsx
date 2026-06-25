@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function TermsAndConditionsPage() {
   return (
-    <LegalPageLayout title="Terms and Conditions" lastUpdated="December 2024">
+    <LegalPageLayout title="Terms and Conditions" lastUpdated="June 22, 2026">
       <p className="text-base font-medium text-foreground sm:text-lg">
         Player Nation – Video Upload Service
       </p>
