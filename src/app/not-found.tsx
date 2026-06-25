@@ -6,13 +6,6 @@ export const metadata: Metadata = {
   description: "The page you're looking for doesn't exist or has been moved.",
 };
 
-const helpfulLinks = [
-  { href: "/", label: "Home" },
-  { href: "/blog", label: "Blog" },
-  { href: "/jobs", label: "Jobs" },
-  { href: "/partnership", label: "Partnership" },
-] as const;
-
 export default function NotFound() {
   return (
     <section className="flex flex-1 items-center border-b border-border">
@@ -35,28 +28,6 @@ export default function NotFound() {
           >
             Back to home
           </Link>
-          <Link
-            href="/blog"
-            className="inline-flex rounded-lg border border-border px-6 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-primary/5"
-          >
-            Read the blog
-          </Link>
-        </div>
-
-        <div className="mt-12 border-t border-border pt-8">
-          <p className="text-sm text-muted">Try one of these instead</p>
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            {helpfulLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="text-sm font-medium text-primary underline-offset-4 transition-colors hover:text-primary/80 hover:underline"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
