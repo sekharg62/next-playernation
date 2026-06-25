@@ -11,7 +11,7 @@ type HeroSectionProps = {
   totalUserCount: number;
 };
 
-const videoUrl ="https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/eee9f2ca-442e-4534-a3f0-88f6a139a1fd/9f28d433-3221-4867-aaa1-934fd9e68c7d/all_touches_1782211752312.mp4";
+//const videoUrl ="https://dg6zlav0cbqax.cloudfront.net/AwsMediaConvertedVideos/output/eee9f2ca-442e-4534-a3f0-88f6a139a1fd/9f28d433-3221-4867-aaa1-934fd9e68c7d/all_touches_1782211752312.mp4";
 export default function HeroSection({ totalUserCount }: HeroSectionProps) {
   return (
     <section>
@@ -81,7 +81,7 @@ export default function HeroSection({ totalUserCount }: HeroSectionProps) {
                   className="pointer-events-none h-[min(55vh,480px)] w-auto object-contain sm:h-[min(62vh,540px)] lg:h-[min(75vh,720px)] xl:h-[min(82vh,800px)]"
                   priority
                 />
-                <HeroHighlightVideo src={videoUrl} />
+                <HeroHighlightVideo src={"/hero.mp4"} />
               </div>
 
               <Image
